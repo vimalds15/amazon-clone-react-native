@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View,Dimensions } from 'react-native'
-import React,{useState,useRef} from 'react'
+import React from 'react'
 import { SliderBox } from 'react-native-image-slider-box'
-import data from '../data/CarouselData'
+import {data} from '../data/CarouselData'
 
 const CarouselCard = () => {
   return (
@@ -29,4 +29,6 @@ const CarouselCard = () => {
 
 export default CarouselCard
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+ 
+})
