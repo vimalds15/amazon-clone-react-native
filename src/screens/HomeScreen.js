@@ -1,11 +1,14 @@
 import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import DeliveryAddressCard from "../components/DeliveryAddressCard";
 import CategoryCard from "../components/CategoryCard";
 import CarouselCard from "../components/CarouselCard";
+import DealCard from "../components/DealCard";
+import { dealData,devicesDealData } from "../data/CarouselData";
 
 const HomeScreen = ({ navigation }) => {
+  
   useEffect(() =>
     navigation.setOptions({
       headerTitle: "",
@@ -71,7 +74,7 @@ const HomeScreen = ({ navigation }) => {
   );
 
   return (
-    <View>
+    <ScrollView>
       <DeliveryAddressCard />
       <ScrollView style={styles.categoryContainer} horizontal={true} showsHorizontalScrollIndicator={false}>
         <CategoryCard />
@@ -85,8 +88,30 @@ const HomeScreen = ({ navigation }) => {
         <CategoryCard />
         <CategoryCard />
       </ScrollView>
+
       <CarouselCard />
-    </View>
+
+      <View>
+        <Text style={styles.dealText}>Electronics devices for home office</Text>
+        <View style={styles.dealItemCont}>
+        {devicesDealData.map(data =>
+        <DealCard img={data.img} text={data.text}  />
+        
+        )}
+        </View>
+      </View>
+
+      <View>
+        <Text style={styles.dealText}> Up to 60% off | Tools & home improvement</Text>
+        <View style={styles.dealItemCont}>
+        {dealData.map(data =>
+        <DealCard img={data.img} text={data.text}  />
+        
+        )}
+        </View>
+      </View>
+
+    </ScrollView>
   );
 };
 
@@ -98,5 +123,18 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingTop: 10,
     paddingBottom: 10,
+  },
+  dealText:{
+    fontSize:16,
+    fontWeight:"bold",
+    marginBottom:20,
+    marginLeft:10,
+    marginTop:20,
+  },
+  dealItemCont:{
+    flexDirection:"row",
+    justifyContent:"space-around",
+    flexWrap:"wrap"
+  
   },
 });
