@@ -71,10 +71,10 @@ const HomeScreen = ({ navigation }) => {
         </View>
       ),
     })
-  );
+  ,[]);
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <DeliveryAddressCard />
       <ScrollView style={styles.categoryContainer} horizontal={true} showsHorizontalScrollIndicator={false}>
         <CategoryCard />
