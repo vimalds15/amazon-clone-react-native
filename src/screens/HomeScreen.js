@@ -5,7 +5,7 @@ import DeliveryAddressCard from "../components/DeliveryAddressCard";
 import CategoryCard from "../components/CategoryCard";
 import CarouselCard from "../components/CarouselCard";
 import DealCard from "../components/DealCard";
-import { dealData,devicesDealData } from "../data/CarouselData";
+import { categoryData, dealData,devicesDealData } from "../data/CarouselData";
 
 const HomeScreen = ({ navigation }) => {
   
@@ -77,16 +77,9 @@ const HomeScreen = ({ navigation }) => {
     <ScrollView showsVerticalScrollIndicator={false}>
       <DeliveryAddressCard />
       <ScrollView style={styles.categoryContainer} horizontal={true} showsHorizontalScrollIndicator={false}>
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
+      {categoryData.map(dat=>
+        <CategoryCard img={dat.img} text={dat.text} />
+        )}
       </ScrollView>
 
       <CarouselCard />
