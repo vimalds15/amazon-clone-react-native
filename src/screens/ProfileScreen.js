@@ -1,7 +1,10 @@
-import { StyleSheet, Text, View,Image } from 'react-native'
+import { StyleSheet, Text, View,Image, ScrollView } from 'react-native'
 import React,{useEffect} from 'react'
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import Logo from "../../assets/amazon.png"
+import ProfileCard from '../components/ProfileCard';
+import { LinearGradient } from 'expo-linear-gradient';
+import OrderCard from '../components/OrderCard';
 
 const ProfileScreen = ({navigation}) => {
 
@@ -21,16 +24,47 @@ const ProfileScreen = ({navigation}) => {
         </View>
       ),
       headerStyle:{
-        backgroundColor:"rgba(5, 250, 242,0.4)"
+        backgroundColor:"rgba(5, 250, 242,0.4)",
+        borderBottomWidth:0,
       }
     })
   );
 
   return (
+    
     <View style={styles.container}>
+      <LinearGradient
+        colors={["rgba(5, 250, 242,0.4)",'#fff']}
+    >
       <View style={styles.titleCont}>
         <Text style={styles.titleText}>Hello, Av Codes</Text>
         <MaterialIcons name='account-circle' color={"gray"} size={30} />
+      </View>
+      <View style={styles.actionCont}>
+        <ProfileCard />
+        <ProfileCard />
+        <ProfileCard />
+        <ProfileCard />
+      </View>
+      </LinearGradient>
+      <View style={styles.orderCont}>
+        <Text style={styles.orderText}>Your Orders</Text>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        <OrderCard />
+        <OrderCard />
+        <OrderCard />
+        <OrderCard />
+        </ScrollView>
+      </View>
+
+      <View style={styles.orderCont}>
+        <Text style={styles.orderText}>Your Wishlist</Text>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        <OrderCard />
+        <OrderCard />
+        <OrderCard />
+        <OrderCard />
+        </ScrollView>
       </View>
     </View>
   )
@@ -40,7 +74,6 @@ export default ProfileScreen
 
 const styles = StyleSheet.create({
   container:{
-    padding:15,
   },
   titleText:{
     fontSize:24,
@@ -48,6 +81,25 @@ const styles = StyleSheet.create({
   },
   titleCont:{
     flexDirection:"row",
-    justifyContent:"space-between"
+    justifyContent:"space-between",
+    padding:15
+  },
+  actionCont:{
+    marginTop:20,
+    flexWrap:"wrap",
+    flexDirection:"row",
+    justifyContent:"space-evenly",
+  },
+  orderCont:{
+    marginTop:15,
+    borderBottomColor:"#b8baba",
+    borderBottomWidth:3,
+    paddingLeft:15,
+    paddingBottom:10,
+  },
+  orderText:{
+    fontWeight:"bold",
+    fontSize:20,
+    marginBottom:15
   }
 })
