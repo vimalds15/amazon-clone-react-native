@@ -23,7 +23,9 @@
     "react-native-screens": "^3.19.0",
     "react-native-snap-carousel": "^3.9.1",
     "react-native-vector-icons": "^9.2.0",
-    "react-style-proptype": "^3.2.2"
+    "react-style-proptype": "^3.2.2",
+    "expo-linear-gradient": "~11.0.3",
+    "deprecated-react-native-prop-types": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
