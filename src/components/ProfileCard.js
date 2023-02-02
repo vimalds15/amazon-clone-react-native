@@ -3,10 +3,10 @@ import React from 'react'
 
 const dimension = Dimensions.get('window').width
 
-const ProfileCard = () => {
+const ProfileCard = ({title}) => {
   return (
     <View style={styles.container}>
-      <Text>Your Orders</Text>
+      <Text>{title}</Text>
     </View>
   )
 }
@@ -15,7 +15,7 @@ export default ProfileCard
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:"#e3e3e3",
+        backgroundColor:"#f0f0f0",
         borderWidth:1,
         borderColor:"#b8baba",
         width:(dimension/2)-25,
