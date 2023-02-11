@@ -1,7 +1,5 @@
-import { StyleSheet, Text, View,Dimensions } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-
-const dimension = Dimensions.get('window').width
 
 const AccountCard = ({title}) => {
   return (
