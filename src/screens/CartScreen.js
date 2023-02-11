@@ -76,9 +76,15 @@ const CartScreen = ({navigation}) => {
         <Text style={styles.titleText}>Subtotal</Text>
         <Text style={styles.priceText}>₹948.00</Text>
       </View>
-      <View style={styles.deliveryTextCont}>
-        <MaterialIcons name="verified" color={"teal"} size={20} style={{backgroundColor:"white"}} />
-        <Text style={{color:"teal",marginLeft:5}}>Your order is eligible for FREE Delivery. Select this option at checkout.</Text>
+      <View style={styles.deliveryCont}>
+        <View style={styles.deliveryIconCont}>
+        <MaterialIcons name='verified' color={"teal"} size={20}
+          style={{backgroundColor:"white"}}
+        />
+        </View>
+        <View style={styles.deliveryTextCont}>
+        <Text style={{color:"teal"}}>Your order is eligible for FREE delivery. Select this option at Checkout</Text>
+        </View>
       </View>
       <View style={styles.buyBtn}>
         <Pressable style={styles.btnCont}>
@@ -115,9 +121,15 @@ const styles = StyleSheet.create({
     fontSize:24,
     marginLeft:10
   },
-  deliveryTextCont:{
+  deliveryCont:{
     padding:10,
     flexDirection:"row"
+  },
+  deliveryIconCont:{
+    width:"10%"
+  },
+  deliveryTextCont:{
+    width:"90%"
   },
   btnCont:{
     marginLeft:"5%",
