@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer style={styles.container}>
-      <Tab.Navigator initialRouteName="profile"
+      <Tab.Navigator initialRouteName="menu"
         screenOptions={{
           tabBarShowLabel:false,
           tabBarActiveTintColor:"#02c3d9",
